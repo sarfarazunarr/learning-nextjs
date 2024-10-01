@@ -1,11 +1,11 @@
 import React from 'react'
 
-const contactfile = () => {
+const Contact = () => {
   return (
     <div>
-      Hello
+      Contact Us
     </div>
   )
 }
 
-export default contactfile
+export default Contact
