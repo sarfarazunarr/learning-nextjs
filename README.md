@@ -233,7 +233,7 @@ app/
 ├── layout.tsx
 ├── page.tsx
 ├── country/
-│   ├── page.tsx //Not available in code (Currently)
+│   ├── page.tsx
 │   ├── pakistan/
 │   │   └── page.tsx
 │   └── japan/
@@ -261,4 +261,51 @@ export default function Japan(){
     )
 }
 ```
-*** Other Data will be added publishing videos ***
+
+### Group Routing
+Group routing is so helpfull it will group multiple routes whithout changing urls. In this you have to create a folder and name that like this `(group_name)` and in this all routes can be accessible on root or on the directory where you have created this group.
+
+```
+app/
+├── page.tsx
+├── (auth)/
+│   └── login/
+        └── page.tsx
+    └── register/
+        └── page.tsx
+    └── other routes
+```
+
+Now `login` page could be accessible `http://localhost:3000/login` and `register` page `http://localhost:3000/register`.
+
+### Dynamic Routing
+Dynamic routing is greate routing feature you can create dynamic route by changing folder / director name like this `[name]` by this `page.tsx` file inside that folder could access the name by getting `params` object in its parameter.
+
+```
+app/
+├── layout.tsx
+├── page.tsx
+├── country/
+│   ├── page.tsx
+    ├── layout.tsx
+    ├── [name]
+        └── page.tsx
+│   ├── other...
+```
+
+Here is sample code of page.tsx inside the `[name]` directory
+
+```javascript
+import React from 'react'
+const CountryData = ({params} : {params: {name: string}}) => {
+  return (
+    <div>
+      <h3>Country Name is {params.name}</h3>
+    </div>
+  )
+}
+export default CountryData
+
+```
+
+By `params.name` we can access the `name` that is defined here `[name]` and value will be recieved from this url `http://localhost:3000/country/country_name`.
