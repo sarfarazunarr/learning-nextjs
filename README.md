@@ -309,3 +309,106 @@ export default CountryData
 ```
 
 By `params.name` we can access the `name` that is defined here `[name]` and value will be recieved from this url `http://localhost:3000/country/country_name`.
+
+
+
+## Components
+Components are a peice of code that contains specific UI with Script that can execute where we will use our component.
+
+### Create Component
+Create a new file like inside `components` folder for better code organization and make sure to write first letter capital like `Navbar.tsx` and create functional component.
+
+```javascript
+export function Navbar(){
+    let name = "Sarfaraz"
+    return (
+        <nav className="flex justify-center gap-4 items-center w-full h-auto py-3 bg-black text-white border-b-2 border-green-400">
+            <div className="text-white font-semibold text-2xl">GIAIC</div>
+            <ul className="flex list-none gap-3 items-center">
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+                <li>Courses</li>
+                <li>Complaints</li>
+                <li>Acount</li>
+            </ul>
+            <div className="flex justify-center items-center gap-4">
+                <h5 className="text-xl text-gray-300">Hi {name}</h5>
+                <button className="px-3 py-2 rounded-md bg-yellow-500 text-white">Signup</button>
+                <button className="px-3 py-2 rounded-md bg-yellow-500 text-white">Login</button>
+            </div>
+        </nav>
+    )
+}
+```
+
+### Components with Props
+Props are like arguments in function these are additional values that are required to add in UI or in Script we can get these values by passing these names in `({name}: {name:string})` round brackets.
+
+```javascript
+const Username = ({name}: {name: string}) => {
+  return (
+    <div className='text-white text-5xl'>
+      Hi {name}
+    </div>
+  )
+}
+
+export default Username
+```
+
+We can also use these values in script like this
+```javascript
+import React from 'react'
+
+const Add = ({value1, value2}: {value1: number, value2: number}) => {
+    let sum = value1 + value2;
+  return (
+    <div>
+      The answer of your values is {value1} + {value2} = {sum}
+    </div>
+  )
+}
+
+export default Add
+```
+
+Here is how we can use these components 
+
+**In layout.tsx**
+```javascript
+...
+return (
+    <html lang="en">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <Navbar />
+        {children}
+      </body>
+    </html>
+  );
+
+```
+
+**In pages**
+```javascript
+import React from 'react'
+import { Navbar } from '@/app/components/Navbar'
+import Username from '@/app/components/Username'
+import Add from '@/app/components/Add'
+
+const Name = ({params}: {params: {name: string}}) => {
+  return (
+
+    <div>
+      <Username name={params.name} />
+      <Add value1={12} value2={13} />
+      Contact Us
+    </div>
+  )
+}
+
+export default Name
+
+```
+
+*More data will be added soon*

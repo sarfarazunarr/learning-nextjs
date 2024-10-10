@@ -1,9 +1,9 @@
 import React from 'react'
-import { Navbar } from '../components/Navbar'
-import Username from '../components/Username'
+import { Navbar } from '@/app/components/Navbar'
+import Username from '@/app/components/Username'
 import Add from '@/app/components/Add'
 
-const Contact = ({params}: {params: {name: string}}) => {
+const Name = ({params}: {params: {name: string}}) => {
   return (
 
     <div>
@@ -14,4 +14,4 @@ const Contact = ({params}: {params: {name: string}}) => {
   )
 }
 
-export default Contact
+export default Name
