@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 export function Navbar(){
-    let name = "Sarfaraz"
+    const name = "Sarfaraz"
     return (
         <nav className="flex justify-center gap-4 items-center w-full h-auto py-3 bg-black text-white border-b-2 border-green-400">
             <div className="text-white font-semibold text-2xl">GIAIC</div>

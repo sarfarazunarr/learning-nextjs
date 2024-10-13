@@ -1,5 +1,4 @@
 import React from 'react'
-import { Navbar } from '@/app/components/Navbar'
 import Username from '@/app/components/Username'
 import Add from '@/app/components/Add'
 
