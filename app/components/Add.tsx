@@ -2,7 +2,7 @@
 import React from 'react'
 
 const Add = ({value1, value2}: {value1: number, value2: number}) => {
-    let sum = value1 + value2;
+    const sum = value1 + value2;
     console.log("Hello")
   return (
     <div>
