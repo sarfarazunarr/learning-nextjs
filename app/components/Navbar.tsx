@@ -1,12 +1,14 @@
+import Link from "next/link"
+
 export function Navbar(){
     let name = "Sarfaraz"
     return (
         <nav className="flex justify-center gap-4 items-center w-full h-auto py-3 bg-black text-white border-b-2 border-green-400">
             <div className="text-white font-semibold text-2xl">GIAIC</div>
             <ul className="flex list-none gap-3 items-center">
-                <li>Home</li>
-                <li>About</li>
-                <li>Contact</li>
+                <Link href={"/"}>Home</Link>
+                <Link href={"/about"}>About</Link>
+                <Link href={"/contact"}>Contact</Link>
                 <li>Courses</li>
                 <li>Complaints</li>
                 <li>Acount</li>
